@@ -1,14 +1,14 @@
 import pytest
 from tools.extract import Extract
-from tools.scraper import get_5090_memexp_ids
+from tools.scraper import get_5090_memexp_paths
 import pandas as pd
 import asyncio
 
-def test_get_5090_memexp_ids():
+def test_get_5090_memexp_paths():
     base_url = "https://www.memoryexpress.com"
     path = "/Category/VideoCards"
     filter_id = "FilterID=825f91ad-c322-6b30-5411-a027616f0c32"
-    paths = asyncio.run(get_5090_memexp_ids(base_url, path, filter_id))
+    paths = asyncio.run(get_5090_memexp_paths(base_url, path, filter_id))
     # Return object is a list
     assert isinstance(paths, list)
     # Objects in the list are strings
